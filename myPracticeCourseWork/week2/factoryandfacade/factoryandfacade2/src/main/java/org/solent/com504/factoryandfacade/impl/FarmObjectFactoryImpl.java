@@ -6,12 +6,13 @@ import org.solent.com504.factoryandfacade.model.Animal;
 import org.solent.com504.factoryandfacade.model.Cat;
 import org.solent.com504.factoryandfacade.model.Cow;
 import org.solent.com504.factoryandfacade.model.Dog;
+import org.solent.com504.factoryandfacade.model.Sheep;
 import org.solent.com504.factoryandfacade.model.FarmFacade;
 import org.solent.com504.factoryandfacade.model.FarmObjectFactory;
 
 public class FarmObjectFactoryImpl implements FarmObjectFactory {
 
-    private static final List supportedAnimalTypes = Arrays.asList(Cat.ANIMAL_TYPE, Dog.ANIMAL_TYPE, Cow.ANIMAL_TYPE);
+    private static final List supportedAnimalTypes = Arrays.asList(Cat.ANIMAL_TYPE, Dog.ANIMAL_TYPE, Cow.ANIMAL_TYPE, Sheep.ANIMAL_TYPE);
 
     @Override
     public Animal createAnimal(String animalType) {
@@ -27,6 +28,9 @@ public class FarmObjectFactoryImpl implements FarmObjectFactory {
                 break;
             case Cow.ANIMAL_TYPE:
                 animal = new CowImpl();
+                break;
+            case Sheep.ANIMAL_TYPE:
+                animal = new SheepImpl();
                 break;
             default:
                 throw new IllegalArgumentException("unknown animalType=" + animalType);
