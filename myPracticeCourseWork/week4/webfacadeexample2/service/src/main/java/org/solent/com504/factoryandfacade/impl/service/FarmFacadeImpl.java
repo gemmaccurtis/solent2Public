@@ -1,9 +1,11 @@
 package org.solent.com504.factoryandfacade.impl.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.solent.com504.factoryandfacade.model.dao.AnimalDao;
 import org.solent.com504.factoryandfacade.model.dao.AnimalTypeDao;
 import org.solent.com504.factoryandfacade.model.dto.Animal;
+import org.solent.com504.factoryandfacade.model.dto.AnimalType;
 import org.solent.com504.factoryandfacade.model.service.FarmFacade;
 
 public class FarmFacadeImpl implements FarmFacade {
@@ -49,6 +51,14 @@ public class FarmFacadeImpl implements FarmFacade {
 
     @Override
     public List<String> getSupportedAnimalTypes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<String> animalTypeStrings = new ArrayList();
+        List<AnimalType> animalTypes = animalTypeDao.getSupportedAnimalTypes();
+        
+        for (AnimalType type : animalTypes) {
+            animalTypeStrings.add(type.getType());
+            
+        }
+        
+        return animalTypeStrings;
     }
 }
