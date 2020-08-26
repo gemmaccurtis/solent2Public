@@ -22,6 +22,13 @@ https://dzone.com/articles/spring-data-jpa
 
 https://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-part-two-crud/
 
+
+
+domain driven design
+https://github.com/ChristophKnabe/spring-ddd-bank/tree/master/src/main
+https://blog.pragmatists.com/refactoring-from-anemic-model-to-ddd-880d3dd3d45f
+https://ordina-jworks.github.io/conference/2016/07/10/SpringIO16-DDD-Rest.html
+
 https://www.boraji.com/spring-4-hibernate-5-jpa-2-integration-example
 
 https://dzone.com/articles/deploying-spring-apps-to-tomcat-without-webxml
@@ -57,3 +64,16 @@ https://howtodoinjava.com/spring-mvc/spring-mvc-difference-between-contextannota
 https://www.viralpatel.net/spring-4-mvc-tutorial-maven-example/
 
 https://www.websparrow.org/spring/how-to-iterate-list-on-jsp-in-spring-mvc How to iterate list on JSP in Spring MVC
+
+
+good https://howtodoinjava.com/spring5/webmvc/spring-dispatcherservlet-tutorial/
+https://www.codesenior.com/en/tutorial/Spring-ContextLoaderListener-And-DispatcherServlet-Concepts
+
+http://cleancodejava.com/simple-spring-data-jpa-example/
+
+https://howtodoinjava.com/spring5/webmvc/spring5-mvc-hibernate5-example/
+
+
+https://www.javaguides.net/p/spring-data-jpa-tutorial.html
+
+https://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-adding-custom-methods-into-all-repositories/ very good
