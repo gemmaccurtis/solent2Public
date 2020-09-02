@@ -2,6 +2,7 @@ package org.solent.com504.meter.impl.dao.jpa;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,7 +22,9 @@ public class ParkingMeterDaoJpaImpl implements ParkingMeterDao {
 
     @Override
     public ParkingMeter findById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ParkingMeter parkingMeter = entityManager.find(ParkingMeter.class, id);
+        return parkingMeter;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -41,7 +44,12 @@ public class ParkingMeterDaoJpaImpl implements ParkingMeterDao {
 
     @Override
     public void deleteById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        entityManager.getTransaction().begin();
+        Query q = entityManager.createQuery("DELETE FROM ParkingMeter p WHERE p.id=:id");
+        q.setParameter("id", id);
+        q.executeUpdate();
+        entityManager.getTransaction().commit();
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -53,7 +61,11 @@ public class ParkingMeterDaoJpaImpl implements ParkingMeterDao {
 
     @Override
     public ParkingMeter findBySerialNumber(String serialNumber) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TypedQuery<ParkingMeter> q = entityManager.createQuery("SELECT p FROM ParkingMeter p WHERE p.serialNumber=:serialNumber", ParkingMeter.class);
+        q.setParameter("serialNumber", serialNumber);
+        ParkingMeter parkingMeter = q.getResultList();
+        return parkingMeter;    
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
