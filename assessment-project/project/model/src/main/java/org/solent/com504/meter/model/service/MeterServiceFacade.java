@@ -17,6 +17,16 @@ public interface MeterServiceFacade {
 
     public ParkingMeter addParkingMeter(ParkingMeter parkingMeter);
     
+    //Added because needed for unit tests
+    public void deleteAllParkingMeters();
     
+    //Added because needed for unit tests
+    public void deleteParkingMeterById(Long id);
+    
+    //Added because needed for unit tests
+    public void deleteAllweeklyChargingScheme();
+    
+    //Added because needed for unit tests
+    public void deleteWeeklyChargingSchemeById(Long id);
     
 }

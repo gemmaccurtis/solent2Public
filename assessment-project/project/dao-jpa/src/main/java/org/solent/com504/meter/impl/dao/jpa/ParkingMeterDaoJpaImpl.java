@@ -63,7 +63,7 @@ public class ParkingMeterDaoJpaImpl implements ParkingMeterDao {
     public ParkingMeter findBySerialNumber(String serialNumber) {
         TypedQuery<ParkingMeter> q = entityManager.createQuery("SELECT p FROM ParkingMeter p WHERE p.serialNumber=:serialNumber", ParkingMeter.class);
         q.setParameter("serialNumber", serialNumber);
-        ParkingMeter parkingMeter = q.getResultList();
+        ParkingMeter parkingMeter = q.getSingleResult();
         return parkingMeter;    
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

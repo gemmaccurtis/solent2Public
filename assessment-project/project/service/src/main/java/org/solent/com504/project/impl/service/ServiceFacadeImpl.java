@@ -62,4 +62,29 @@ public class ServiceFacadeImpl implements MeterServiceFacade {
         return parkingMeterDao.save(parkingMeter);
     }
     
+    
+    //needed for unit tests
+    @Override
+    public void deleteAllParkingMeters() {
+        parkingMeterDao.deleteAll();
+        
+    }
+    //needed for unit tests
+    @Override
+    public void deleteParkingMeterById(Long id) {
+        parkingMeterDao.deleteById(id);
+    }
+    
+    //needed for unit tests
+    @Override
+    public void deleteAllweeklyChargingScheme() {
+        weeklyChargingSchemeDao.deleteAll();
+        
+    }
+    //needed for unit tests
+    @Override
+    public void deleteWeeklyChargingSchemeById(Long id) {
+        weeklyChargingSchemeDao.deleteById(id);
+    }
+    
 }
